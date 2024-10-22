@@ -20,8 +20,15 @@ function Header(props) {
 }
 
 export default function Generator(props) {
-  const { muscles, setMuscles, poison, setPoison, goals, setGoals, updateWorkout } = props;
-
+  const {
+    muscles,
+    setMuscles,
+    poison,
+    setPoison,
+    goals,
+    setGoals,
+    updateWorkout,
+  } = props;
 
   const [showModal, setShowModal] = useState(false);
 
@@ -57,12 +64,14 @@ export default function Generator(props) {
       header={"generate your workout"}
       title={["It's", "Huge", "o'clock"]}
     >
-      {/* First container / choose your split */}
-      <Header
-        index={"01"}
-        title={"Pick your poison"}
-        description={"Select the workout you wish to endure"}
-      />
+      <div id="target-section">
+        {/* First container / choose your split */}
+        <Header
+          index={"01"}
+          title={"Pick your poison"}
+          description={"Select the workout you wish to endure"}
+        />
+      </div>
       <div className="grid grid-cols-1 sm:flex sm:justify-center sm:mx-auto gap-4">
         {Object.keys(WORKOUTS).map((type, typeIndex) => {
           return (

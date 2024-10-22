@@ -4,7 +4,7 @@ import Workout from "./components/Workout";
 import { useState } from "react";
 import { generateWorkout } from "./utils/funtions";
 import AboutSection from "./components/AboutSection";
-import Footer from "./components/Footer"
+import Footer from "./components/Footer";
 
 function App() {
   const [workout, setWorkout] = useState(null);
@@ -23,21 +23,23 @@ function App() {
   }
 
   return (
-    <main className="min-h-screen flex flex-col mx-auto bg-gradient-to-t from-slate-800 to-slate-950 text-white text-sm sm:text-base">
-      <Hero />
-      <Generator
-        poison={poison}
-        setPoison={setPoison}
-        muscles={muscles}
-        setMuscles={setMuscles}
-        goals={goals}
-        setGoals={setGoals}
-        updateWorkout={updateWorkout}
-      />
-      {workout && <Workout workout={workout} />}
-      <AboutSection />
+    <>
+      <main className="min-h-screen flex flex-col mx-auto bg-gradient-to-t from-slate-800 to-slate-950 text-white text-sm sm:text-base">
+        <Hero />
+        <Generator
+          poison={poison}
+          setPoison={setPoison}
+          muscles={muscles}
+          setMuscles={setMuscles}
+          goals={goals}
+          setGoals={setGoals}
+          updateWorkout={updateWorkout}
+        />
+        {workout && <Workout workout={workout} />}
+        <AboutSection />
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }
 
