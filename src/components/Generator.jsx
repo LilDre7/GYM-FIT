@@ -63,7 +63,7 @@ export default function Generator(props) {
         title={"Pick your poison"}
         description={"Select the workout you wish to endure"}
       />
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:flex sm:justify-center sm:mx-auto gap-4">
         {Object.keys(WORKOUTS).map((type, typeIndex) => {
           return (
             <button
@@ -72,7 +72,7 @@ export default function Generator(props) {
                 setPoison(type);
               }}
               className={
-                "bg-slate-950 border px-4 py-4 rounded-lg duration-200 hover:border-blue-600" +
+                "bg-slate-950 border px-4 py-4 lg:w-60 sm:px-8 rounded-lg duration-200 hover:border-blue-600" +
                 (type === poison ? " border-blue-600" : "border-blue-400 ")
               }
               key={typeIndex}
@@ -88,7 +88,7 @@ export default function Generator(props) {
         title={"Lock on targets"}
         description={"Select the muscles judged for annihilation."}
       />
-      <div className="bg-slate-950 flex flex-col border border-solid border-blue-400 rounded-md">
+      <div className="bg-slate-950 w-80 sm:w-[24rem] mx-auto flex flex-col border border-solid border-blue-400 rounded-md">
         <button
           onClick={toggleModel}
           className="relative flex items-center justify-center p-3"
@@ -129,7 +129,7 @@ export default function Generator(props) {
         title={"Become Juggernaut"}
         description={"Select your ultimate objective."}
       />
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:flex sm:justify-center sm:mx-auto gap-4">
         {Object.keys(SCHEMES).map((scheme, schemeIndex) => {
           return (
             <button
@@ -137,7 +137,7 @@ export default function Generator(props) {
                 setGoals(scheme);
               }}
               className={
-                "bg-slate-950 border py-4 px-4 rounded-lg duration-200 hover:border-blue-600" +
+                "bg-slate-950 border px-4 py-4 sm:w-40 lg:w-60 rounded-lg duration-200 hover:border-blue-600" +
                 (scheme === goals ? " border-blue-600" : "border-blue-400 ")
               }
               key={schemeIndex}
