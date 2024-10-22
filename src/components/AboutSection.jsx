@@ -2,7 +2,7 @@ const people = [
   {
     name: "Alvaro Aburto",
     role: "Desarrollador Web full-stack 🧑🏽‍💻",
-    imageUrl: "/public/pixelcut-export.png",
+    imageUrl: "/pixelcut-export.png",
     linkedIn: "",
   },
 ];

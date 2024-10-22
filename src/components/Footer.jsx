@@ -6,7 +6,7 @@ export default function Footer() {
           <div className="mb-6 md:mb-0">
             <a href="https://flowbite.com/" className="flex items-center">
               <img
-                src="/public/pixelcut-export.png"
+                src="/pixelcut-export.png"
                 className="h-8 me-3"
                 alt="FlowBite Logo"
               />
