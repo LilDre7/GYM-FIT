@@ -1,10 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types';
 
-exercise.propTypes = {
-  exercise: PropTypes.array.isRequired,
-};
-
 export default function ExerciseCard(props) {
     const { exercise, i } = props
 
