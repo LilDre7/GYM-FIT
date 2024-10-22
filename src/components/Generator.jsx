@@ -2,9 +2,12 @@ import { useState } from "react";
 import { SCHEMES, WORKOUTS } from "../utils/swoldier";
 import SectionWrapper from "./SectionWrapper";
 import Button from "./Button";
+import ScrollIntoView from "react-scroll-into-view"
 
 function Header(props) {
   const { index, title, description } = props;
+
+  
 
   return (
     <div className="flex flex-col gap-4 ">
@@ -59,6 +62,14 @@ export default function Generator(props) {
     }
   }
 
+  const handleScrolls = () => {
+    const targetSection = document.getElementById("pickOne");
+    
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: "smooth", inline: "center" }); // Desplazamiento suave
+    }
+  };
+
   return (
     <SectionWrapper
       header={"generate your workout"}
@@ -75,19 +86,21 @@ export default function Generator(props) {
       <div className="grid grid-cols-1 sm:flex sm:justify-center sm:mx-auto gap-4">
         {Object.keys(WORKOUTS).map((type, typeIndex) => {
           return (
-            <button
-              onClick={() => {
-                setMuscles([]);
-                setPoison(type);
-              }}
-              className={
-                "bg-slate-950 border px-4 py-4 lg:w-60 sm:px-8 rounded-lg duration-200 hover:border-blue-600" +
-                (type === poison ? " border-blue-600" : "border-blue-400 ")
-              }
-              key={typeIndex}
-            >
-              <p className="capitalize">{type.replaceAll("_", " ")}</p>
-            </button>
+            <ScrollIntoView onClick={handleScrolls} key={typeIndex} href="#pickOne">
+              <button
+                id="pickOne"
+                onClick={() => {
+                  setMuscles([]);
+                  setPoison(type);
+                }}
+                className={
+                  "bg-slate-950 border px-4 py-4 lg:w-60 sm:px-8 rounded-lg duration-200 hover:border-blue-600" +
+                  (type === poison ? " border-blue-600" : "border-blue-400 ")
+                }
+              >
+                <p className="capitalize">{type.replaceAll("_", " ")}</p>
+              </button>
+            </ScrollIntoView>
           );
         })}
       </div>
