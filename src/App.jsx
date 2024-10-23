@@ -35,7 +35,7 @@ function App() {
           setGoals={setGoals}
           updateWorkout={updateWorkout}
         />
-        {workout && <Workout workout={workout} />}
+        {workout && <Workout workout={workout} muscles={muscles} poison={poison} />}
         <AboutSection />
       </main>
       <Footer />

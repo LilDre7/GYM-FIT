@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
-            <a href="https://flowbite.com/" className="flex items-center">
+            <a href="https://bento.me/alvaroaburto0" target="_blank" className="flex items-center">
               <img
                 src="/pixelcut-export.png"
                 className="h-8 me-3"
@@ -29,6 +29,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="https://tailwindcss.com/"
+                    target="_blank"
                     className="hover:underline"
                   >
                     Tailwind CSS
@@ -44,6 +45,7 @@ export default function Footer() {
                 <li className="mb-4">
                   <a
                     href="https://github.com/LilDre7"
+                    target="_blank"
                     className="hover:underline "
                   >
                     Github
@@ -52,6 +54,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="https://discord.com/channels/1230890341721182330/1292567298267414568"
+                    target="_blank"
                     className="hover:underline"
                   >
                     Discord
@@ -142,6 +145,7 @@ export default function Footer() {
             </a>
             <a
               href="https://github.com/LilDre7"
+              target="_blank"
               className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
             >
               <svg

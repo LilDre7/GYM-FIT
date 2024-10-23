@@ -10,8 +10,8 @@ const people = [
 export default function AboutSection() {
   return (
     <div className="mx-auto py-24 sm:py-32">
-      <div className="mx-auto grid max-w-full gap-20 px-6 lg:px-8 xl:grid-cols-3">
-        <div className="mx-auto  md:w-[40rem] ">
+      <div className="mx-auto grid max-w-full gap-20 px-6">
+        <div className="mx-auto md:w-[40rem] xl:ml-[5rem] ">
           <h2 className="text-pretty text-center text-3xl font-semibold tracking-tight text-gray-100 sm:text-4xl">
             AI FIT WORKOUT
           </h2>
@@ -41,6 +41,7 @@ export default function AboutSection() {
                     </h3>
                     <a
                       href="https://www.linkedin.com/in/alvaro-aburto-dev/"
+                      target="_blank"
                       className="hover:text-gray-50 text-blue-400 dark:hover:text-white"
                     >
                       <svg

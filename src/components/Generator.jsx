@@ -2,15 +2,13 @@ import { useState } from "react";
 import { SCHEMES, WORKOUTS } from "../utils/swoldier";
 import SectionWrapper from "./SectionWrapper";
 import Button from "./Button";
-import ScrollIntoView from "react-scroll-into-view"
+import ScrollIntoView from "react-scroll-into-view";
 
 function Header(props) {
   const { index, title, description } = props;
 
-  
-
   return (
-    <div className="flex flex-col gap-4 ">
+    <div className="flex flex-col gap-4 text-center">
       <div className="flex flex-col items-center justify-center gap-2">
         <p className="text-4xl sm:text-4xl md:text-5xl font-semibold text-slate-400">
           {index}
@@ -64,7 +62,7 @@ export default function Generator(props) {
 
   const handleScrolls = () => {
     const targetSection = document.getElementById("pickOne");
-    
+
     if (targetSection) {
       targetSection.scrollIntoView({ behavior: "smooth", inline: "center" }); // Desplazamiento suave
     }
@@ -86,7 +84,11 @@ export default function Generator(props) {
       <div className="grid grid-cols-1 sm:flex sm:justify-center sm:mx-auto gap-4">
         {Object.keys(WORKOUTS).map((type, typeIndex) => {
           return (
-            <ScrollIntoView onClick={handleScrolls} key={typeIndex} href="#pickOne">
+            <ScrollIntoView
+              onClick={handleScrolls}
+              key={typeIndex}
+              href="#pickOne"
+            >
               <button
                 id="pickOne"
                 onClick={() => {
@@ -94,7 +96,7 @@ export default function Generator(props) {
                   setPoison(type);
                 }}
                 className={
-                  "bg-slate-950 border px-4 py-4 lg:w-60 sm:px-8 rounded-lg duration-200 hover:border-blue-600" +
+                  "bg-slate-950 redshawo w-full border px-4 py-4 lg:w-60 sm:px-8 rounded-lg duration-200 hover:border-blue-400" +
                   (type === poison ? " border-blue-600" : "border-blue-400 ")
                 }
               >
@@ -110,7 +112,7 @@ export default function Generator(props) {
         title={"Lock on targets"}
         description={"Select the muscles judged for annihilation."}
       />
-      <div className="bg-slate-950 w-80 sm:w-[24rem] mx-auto flex flex-col border border-solid border-blue-400 rounded-md">
+      <div className="bg-slate-950 w-80 sm:w-[28rem] mx-auto flex flex-col border border-solid border-blue-400 rounded-md">
         <button
           onClick={toggleModel}
           className="relative flex items-center justify-center p-3"
@@ -169,7 +171,7 @@ export default function Generator(props) {
           );
         })}
       </div>
-      <Button func={updateWorkout} text={"Formulate"} />
+      <Button func={updateWorkout} text={"FORMULATE"} />
     </SectionWrapper>
   );
 }
