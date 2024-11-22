@@ -1,6 +1,3 @@
-import Button from "./Button";
-import ScrollIntoView from "react-scroll-into-view";
-
 export default function Hero() {
   const handleScroll = () => {
     const targetSection = document.getElementById("target-section");
@@ -10,31 +7,68 @@ export default function Hero() {
   };
 
   return (
-    <div id="newOneWorkout" className="min-h-screen flex flex-col gap-10 items-center justify-center text-center max-w-[800px] w-full mx-auto p-4">
-      <div className="flex flex-col gap-4">
-        <img className="w-40 h-40 mx-auto" src="/logo.png" alt="ai-fit" />
-        <h1 className="uppercase font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
-          Swole<span className="text-blue-400">normous</span>
-        </h1>
+    <header id="hero" className="relative">
+      <img
+        src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f66cdeeb4ddfdae25a26e_Background%20Hero.svg"
+        alt=""
+        className="absolute -z-10 inline-block h-full w-full object-cover"
+      />
+      <div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32">
+        <div className="mx-auto max-w-3xl text-center">
+          <h1 className="mb-6 pb-4 text-4xl font-bold text-white md:text-6xl">
+            The Website You Want for your new Workout.
+          </h1>
+          <p className="mx-auto mb-5 max-w-[528px] text-xl text-[#636262] lg:mb-8">
+            AI Fit is a platform that allows you to create your own customized
+            workout program.
+          </p>
+          <button
+            onClick={handleScroll}
+            type="button"
+            id="button"
+            className="inline-block rounded-full bg-[#c9fd02] px-8 py-4 text-center font-bold text-black transition hover:border-black hover:bg-white"
+          >
+            Get Started
+          </button>
+        </div>
+        <div className="mx-auto mt-16 grid max-w-[1040px] grid-cols-2 gap-8 py-20 sm:grid-cols-3 sm:gap-12 md:grid-cols-5">
+          <div className="mx-auto">
+            <img
+              src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f66cdeeb4ddfdae25a267_Microsoft%20Logo.svg"
+              alt=""
+              className="inline-block"
+            />
+          </div>
+          <div className="mx-auto">
+            <img
+              src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f66cdeeb4ddfdae25a26a_PayPal%20Logo.svg"
+              alt=""
+              className="inline-block"
+            />
+          </div>
+          <div className="mx-auto">
+            <img
+              src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f66cdeeb4ddfdae25a268_Google%20Logo.svg"
+              alt=""
+              className="inline-block"
+            />
+          </div>
+          <div className="mx-auto">
+            <img
+              src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f66cdeeb4ddfdae25a269_Chase%20Logo.svg"
+              alt=""
+              className="inline-block"
+            />
+          </div>
+          <div className="mx-auto">
+            <img
+              src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f66cdeeb4ddfdae25a26b_Walmart%20Logo.svg"
+              alt=""
+              className="inline-block"
+            />
+          </div>
+        </div>
       </div>
-      <p className="text-base md:text-lg font-mono">
-        I hereby acknowledgement that I may become
-        <span className="text-blue-400 font-medium">
-          unbelievably swolenormous
-        </span>
-        and accept all risks of becoming the local
-        <span className="text-blue-400 font-medium">mass montrosity</span>,
-        afflicted with severe body dismorphia, unable to fit through doors.
-      </p>
-      <ScrollIntoView onClick={handleScroll} href="#target-section">
-        <Button
-          className="mix-blend-color-burn"
-          func={() => {
-            window.location.href = "#generate";
-          }}
-          text={"Accept & Begin"}
-        ></Button>
-      </ScrollIntoView>
-    </div>
+    </header>
   );
 }
