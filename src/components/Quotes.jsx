@@ -1,30 +1,30 @@
 export default function Quotes() {
   return (
-    <div className="min-h-screen w-screen bg-black">
-      <div className="mx-auto max-w-7xl pt-16 sm:pt-24">
+    <div className="min-h-screen w-screen bg-[#121010] ">
+      <div className="mx-auto max-w-6xl pt-16 sm:pt-24">
         <div className="space-y-8 lg:space-y-0 lg:grid lg:grid-cols-12 lg:gap-8">
           <div className="px-6 sm:text-center md:mx-auto md:max-w-2xl lg:col-span-6 lg:flex lg:items-center lg:text-left">
             <div className="space-y-8">
               <div className="space-y-4">
                 <div className="space-y-2">
                   <span className="rounded-full uppercase bg-pink-500 px-3 py-0.5 text-sm font-semibold leading-5 text-white">
-                    Early Access
+                    Swoley fit AI.
                   </span>
                   <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
-                    <span className="sm:text-6xl"></span> Wireless Bluetooth
-                    Earbuds
+                    <span className="pr-2 sm:text-6xl">AI</span>
                     <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-pink-600">
-                      StellarGlo
+                      APP
                     </span>
                     <br />
-                    go beyond sound.
+                    ENJOY YOUR FITNESS JOURNEY WITH US
                   </h1>
                 </div>
 
                 <p className="text-base text-gray-200 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                  Immerse yourself in superior audio quality with the StellarGlo
-                  Wireless Bluetooth Earbuds. These sleek and lightweight
-                  earbuds deliver crystal-clear sound and rich bass.
+                  While vector methods are inaccurate and inconsistent, AI-Fit
+                  applies both vector and laser measurements to output reliable
+                  science-sourced fit data for the rotor and stator—data you
+                  need to optimize performance, torque and efficiency.
                 </p>
               </div>
 
@@ -128,13 +128,12 @@ export default function Quotes() {
               <div style={{ width: "100%", height: "100%" }}>
                 <div style={{ width: "100%", height: "100%" }}>
                   <iframe
-                    frameBorder="0"
-                    allowFullScreen="1"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     width="100%"
                     height="100%"
-                    src="https://www.youtube.com/embed/mr15Xzb1Ook?autoplay=0&amp;mute=0&amp;controls=0"
-                    id="widget2"
+                    src="https://www.youtube.com/embed/-sZeu2ARX8A"
+                    title="MAGIC AI - The World&#39;s First AI Personal Trainer"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
                   ></iframe>
                 </div>
               </div>
