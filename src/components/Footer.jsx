@@ -6,20 +6,20 @@ export default function Footer() {
           {/* Description Column */}
           <div className="max-w-xs">
             <p className="uppercase text-sm leading-relaxed">
-              CRSL Studio, formerly Carosello Lab, is an award-winning visual design agency, based in Milan.
+              ADDW AGENCY IN NOVATION COSTA RICA, 2023 
             </p>
           </div>
 
           {/* Contact Column */}
           <div className="space-y-1">
-            <a href="mailto:info@carosellolab.com" className="block text-sm hover:underline">
-              info@carosellolab.com
+            <a href="mailto:alvaroaburto71@gmail.com" className="block text-sm hover:underline">
+              alvaroaburto71@gmail.com
             </a>
-            <a href="tel:+390283629532" className="block text-sm hover:underline">
-              +39 02 83629 532
+            <a href="tel:+50664670470" className="block text-sm hover:underline">
+              +506 64670470
             </a>
             <a href="https://instagram.com" className="block text-sm hover:underline">
-              Instagram
+              LINKEDIN
             </a>
           </div>
 
@@ -30,17 +30,17 @@ export default function Footer() {
               <div className="space-y-1">
                 <p className="text-sm">Carosello Lab</p>
                 <p className="text-sm">via C. Darwin 8,</p>
-                <p className="text-sm">20143 Milan</p>
-                <p className="text-sm">Italy</p>
+                <p className="text-sm">555 GUANACASTE</p>
+                <p className="text-sm">COSTA RICA</p>
               </div>
             </div>
             
             <div>
-              <h3 className="uppercase text-sm mb-2">Registered Office</h3>
+              <h3 className="uppercase text-sm mb-2">Remote Office</h3>
               <div className="space-y-1">
                 <p className="text-sm">CaroselloLab srl</p>
                 <p className="text-sm">Circonvallazione Clodia, 82</p>
-                <p className="text-sm">00195 - Roma (RM) Italia</p>
+                <p className="text-sm">00195 - COSTA RICA (CR) LIBERIA</p>
               </div>
             </div>
           </div>
@@ -50,8 +50,8 @@ export default function Footer() {
             <div>
               <h3 className="uppercase text-sm mb-2">Our Brands</h3>
               <div className="space-y-1">
-                <a href="#" className="block text-sm hover:underline">Arcipelago</a>
-                <a href="#" className="block text-sm hover:underline">Designers Against Coronavirus</a>
+                <a href="#" className="block text-sm hover:underline">ALVARO_ABURTO</a>
+                <a href="#" className="block text-sm hover:underline">AGENCY Designers DREAMS</a>
                 <a href="#" className="block text-sm hover:underline">Food Pirate Studios</a>
               </div>
             </div>
@@ -65,7 +65,7 @@ export default function Footer() {
 
         {/* Logo */}
         <div className="border-t border-white/20 pt-12">
-          <h1 className="text-[12rem] font-bold leading-none tracking-tighter">CRSL</h1>
+          <h1 className="text-[12rem] font-bold leading-none tracking-tighter">ADDW</h1>
         </div>
       </div>
     </footer>

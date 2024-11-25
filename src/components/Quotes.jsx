@@ -1,9 +1,34 @@
+import { useEffect } from "react";
+import { gsap } from "gsap";
+
 export default function Quotes() {
+  useEffect(() => {
+    const handleScroll = () => {
+      const elements = document.querySelectorAll(".animate-on-scroll");
+      elements.forEach((element) => {
+        const rect = element.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          gsap.to(element, { opacity: 1, duration: 0.5 });
+          gsap.to(element, { opacity: 1, y: 0, duration: 3 });
+        } else {
+          gsap.to(element, { opacity: 0, y: 50, duration: 1 });
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Call it once to set initial state
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen w-screen bg-[#121010] ">
+    <div className="min-h-screen w-screen bg-[#121010]">
       <div className="mx-auto max-w-6xl pt-16 sm:pt-24">
         <div className="space-y-8 lg:space-y-0 lg:grid lg:grid-cols-12 lg:gap-8">
-          <div className="px-6 sm:text-center md:mx-auto md:max-w-2xl lg:col-span-6 lg:flex lg:items-center lg:text-left">
+          <div className="px-6 sm:text-center md:mx-auto md:max-w-2xl lg:col-span-6 lg:flex lg:items-center lg:text-left animate-on-scroll">
             <div className="space-y-8">
               <div className="space-y-4">
                 <div className="space-y-2">
@@ -123,7 +148,7 @@ export default function Quotes() {
             </div>
           </div>
 
-          <div className="flex items-center w-full col-span-6 py-6">
+          <div className="flex items-center w-full col-span-6 py-6 animate-on-scroll">
             <div className="px-6 h-96 lg:h-100% w-full max-w-2xl col-span-6 flex items-center mx-auto">
               <div style={{ width: "100%", height: "100%" }}>
                 <div style={{ width: "100%", height: "100%" }}>
@@ -131,9 +156,9 @@ export default function Quotes() {
                     width="100%"
                     height="100%"
                     src="https://www.youtube.com/embed/-sZeu2ARX8A"
-                    title="MAGIC AI - The World&#39;s First AI Personal Trainer"
+                    title="MAGIC AI - The World 's First AI Personal Trainer"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen
+                    allowFullScreen
                   ></iframe>
                 </div>
               </div>

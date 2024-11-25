@@ -7,7 +7,6 @@ import AboutSection from "./components/AboutSection";
 import Footer from "./components/Footer";
 import { Navbar } from "./components/Navbar";
 import Quotes from "./components/Quotes";
-import VideoSection from "./components/VideoSection";
 
 function App() {
   const [workout, setWorkout] = useState(null);
@@ -30,7 +29,6 @@ function App() {
       <main className="min-h-screen flex flex-col mx-auto bg-gradient-to-t from-slate-800 to-slate-950 text-white text-sm sm:text-base">
         <Navbar />
         <Hero />
-        <VideoSection />
         <Generator
           poison={poison}
           setPoison={setPoison}

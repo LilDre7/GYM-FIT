@@ -48,7 +48,7 @@ export function Navbar() {
             <DropdownMenuTrigger asChild>
               <Button
                 variant="outline"
-                className="bg-white text-black border-none hover:bg-blue-500"
+                className="bg-white text-black border-none hover:bg-gray-600"
               >
                 DesignDream.tech {/* Correo electrónico del usuario */}
                 <ChevronDown className="ml-2 h-4 w-4" />
@@ -90,7 +90,7 @@ export function Navbar() {
                     {route.name}
                   </a>
                 ))}
-                <p className="absolute bottom-0 py-9 text-8xl overflow-hidden">
+                <p className="absolute bottom-0 py-9 text-6xl overflow-hidden">
                 - Agency Design Dreams Studio
                 </p>
               </nav>
