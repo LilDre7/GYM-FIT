@@ -14,7 +14,7 @@ const navList = [
     href: "#",
   },
   {
-    name: "Pricing",
+    name: "About",
     href: "#",
   },
   {
