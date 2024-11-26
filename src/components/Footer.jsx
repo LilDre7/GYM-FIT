@@ -18,7 +18,7 @@ export default function Footer() {
             <a href="tel:+50664670470" className="block text-sm hover:underline">
               +506 64670470
             </a>
-            <a href="https://instagram.com" className="block text-sm hover:underline">
+            <a href="https://www.linkedin.com/in/alvaro-aburto-dev/" className="block text-sm hover:underline">
               LINKEDIN
             </a>
           </div>
@@ -52,7 +52,7 @@ export default function Footer() {
               <div className="space-y-1">
                 <a href="#" className="block text-sm hover:underline">ALVARO_ABURTO</a>
                 <a href="#" className="block text-sm hover:underline">AGENCY Designers DREAMS</a>
-                <a href="#" className="block text-sm hover:underline">Food Pirate Studios</a>
+                <a href="https://bento.me/alvaroaburto" className="block text-sm hover:underline">BENTO</a>
               </div>
             </div>
             

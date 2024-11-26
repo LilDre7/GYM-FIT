@@ -1,7 +1,7 @@
 const navList = [
   {
     name: "Home",
-    href: "#",
+    href: "·",
   },
   {
     name: "Feautures",

@@ -39,7 +39,7 @@ function App() {
 
   return (
     <>
-      <main className="min-h-screen flex flex-col mx-auto bg-gradient-to-t from-slate-800 to-slate-950 text-white text-sm sm:text-base">
+      <main className="overflow-hidden min-h-screen flex flex-col mx-auto bg-gradient-to-t from-slate-800 to-slate-950 text-white text-sm sm:text-base">
         <Navbar />
         <Hero />
         <Generator
@@ -54,7 +54,7 @@ function App() {
 
         {isLoading ? (
           // Loader visible al cargar la página
-          <div className="loader-container absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center bg-black z-50">
+          <div className="overflow-hidden loader-container absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center bg-black z-50">
             <div className="loader bg-black rounded-full w-16 h-16">
               <div className="loader-inner bg-white rounded-full w-12 h-12 animate-spin"></div>
             </div>

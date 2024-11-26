@@ -27,10 +27,10 @@ export function Navbar() {
         <nav className="hidden md:flex flex-1 items-center space-x-6">
           {navList.map((route) => (
             <a
-              key={route.href} // Clave única para cada enlace
+              key={route.id} // Clave única para cada enlace
               to={route.href} // Enlace de navegación
               className={cn(
-                "text-sm transition-colors hover:text-white", // Estilos básicos
+                "text-sm transition-colors hover:text-white cursor-pointer", // Estilos básicos
                 location.pathname === route.href // Compara la ruta actual
                   ? "text-white bg-zinc-800 px-3 py-1.5 rounded-md" // Estilos si es la ruta activa
                   : "text-zinc-400" // Estilos para rutas inactivas
