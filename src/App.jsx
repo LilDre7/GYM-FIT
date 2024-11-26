@@ -1,7 +1,8 @@
+import { useState, useEffect } from "react";
+import gsap from "gsap";
 import Hero from "./components/Hero";
 import Generator from "./components/Generator";
 import Workout from "./components/Workout";
-import { useState } from "react";
 import { generateWorkout } from "./utils/funtions";
 import AboutSection from "./components/AboutSection";
 import Footer from "./components/Footer";
@@ -13,6 +14,7 @@ function App() {
   const [poison, setPoison] = useState("individual");
   const [muscles, setMuscles] = useState([]);
   const [goals, setGoals] = useState("strength_power");
+  const [isLoading, setIsLoading] = useState(true); // Estado para controlar el loader
 
   function updateWorkout() {
     if (muscles.length < 1) {
@@ -23,6 +25,17 @@ function App() {
     console.log(newWorkout);
     setWorkout(newWorkout);
   }
+
+  // Simula que la página se ha cargado
+  useEffect(() => {
+    // Animación del loader con GSAP
+    gsap.to(".loader", {
+      opacity: 0,
+      duration: 2,
+      delay: 1,
+      onComplete: () => setIsLoading(false),
+    });
+  }, []);
 
   return (
     <>
@@ -38,11 +51,23 @@ function App() {
           setGoals={setGoals}
           updateWorkout={updateWorkout}
         />
-        {workout && (
-          <Workout workout={workout} muscles={muscles} poison={poison} />
+
+        {isLoading ? (
+          // Loader visible al cargar la página
+          <div className="loader-container absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center bg-black z-50">
+            <div className="loader bg-black rounded-full w-16 h-16">
+              <div className="loader-inner bg-white rounded-full w-12 h-12 animate-spin"></div>
+            </div>
+          </div>
+        ) : (
+          <>
+            {workout && (
+              <Workout workout={workout} muscles={muscles} poison={poison} />
+            )}
+            <Quotes />
+            <AboutSection />
+          </>
         )}
-        <Quotes />
-        <AboutSection />
       </main>
       <Footer />
     </>
