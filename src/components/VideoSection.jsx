@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import video from "../../public/section 2.mp4"
 
 export default function VideoSection() {
   function hideSkeleton(event) {
@@ -22,7 +23,7 @@ export default function VideoSection() {
           initial={{ scale: 0.5 }}
           animate={{ scale: 1 }}
           transition={{ duration: 1 }}
-          src="/section 2.mp4"
+          src={video}
           className="video"
           loop
           muted
