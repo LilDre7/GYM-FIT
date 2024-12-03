@@ -3,6 +3,7 @@ import { SCHEMES, WORKOUTS } from "../utils/swoldier";
 import SectionWrapper from "./SectionWrapper";
 import Button from "./Button";
 import ScrollIntoView from "react-scroll-into-view";
+import { div } from "motion/react-client";
 
 function Header(props) {
   const { index, title, description } = props;
@@ -69,6 +70,7 @@ export default function Generator(props) {
   };
 
   return (
+    <section id="generator">
     <SectionWrapper
       header={"generate your workout"}
       title={["It's", "Huge", "o'clock"]}
@@ -173,5 +175,6 @@ export default function Generator(props) {
       </div>
       <Button func={updateWorkout} text={"FORMULATE"} />
     </SectionWrapper>
+    </section>
   );
 }

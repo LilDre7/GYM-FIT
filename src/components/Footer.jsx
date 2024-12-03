@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="bg-black text-white px-6 py-12 font-light overflow-hidden">
+    <footer id="footer" className="bg-black text-white px-6 py-12 font-light overflow-hidden">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-24">
           {/* Description Column */}

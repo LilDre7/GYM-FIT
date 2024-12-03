@@ -25,7 +25,7 @@ export default function Quotes() {
   }, []);
 
   return (
-    <div className="min-h-screen w-screen bg-[#121010]">
+    <div id="quote" className="min-h-screen w-screen bg-[#121010]">
       <div className="mx-auto max-w-6xl pt-16 sm:pt-24">
         <div className="space-y-8 lg:space-y-0 lg:grid lg:grid-cols-12 lg:gap-8">
           <div className="px-6 sm:text-center md:mx-auto md:max-w-2xl lg:col-span-6 lg:flex lg:items-center lg:text-left animate-on-scroll">

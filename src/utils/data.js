@@ -1,19 +1,19 @@
 const navList = [
   {
     name: "Home",
-    href: "·",
+    href: "#generator",
   },
   {
     name: "Feautures",
-    href: "#",
+    href: "#quote",
   },
   {
     name: "About",
-    href: "#",
+    href: "#about",
   },
   {
-    name: "Blog",
-    href: "#",
+    name: "Contact",
+    href: "#footer",
   },
 ];
 
