@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import video from "../../public/section 2.mp4"
+import video from "../../public/section2.mp4"
 
 export default function VideoSection() {
   function hideSkeleton(event) {
