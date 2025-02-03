@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 
 export default function ExerciseCard(props) {
   const { exercise, i } = props;

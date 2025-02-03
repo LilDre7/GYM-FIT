@@ -3,7 +3,7 @@ import { SCHEMES, WORKOUTS } from "../utils/swoldier";
 import SectionWrapper from "./SectionWrapper";
 import Button from "./Button";
 import ScrollIntoView from "react-scroll-into-view";
-import { div } from "motion/react-client";
+import { toast, ToastContainer } from "react-toastify";
 
 function Header(props) {
   const { index, title, description } = props;
@@ -71,110 +71,116 @@ export default function Generator(props) {
 
   return (
     <section id="generator">
-    <SectionWrapper
-      header={"generate your workout"}
-      title={["It's", "Huge", "o'clock"]}
-    >
-      <div id="target-section">
-        {/* First container / choose your split */}
+      <ToastContainer />
+      <SectionWrapper
+        header={"generate your workout"}
+        title={["It's", "Huge", "o'clock"]}
+      >
+        <div id="target-section">
+          {/* First container / choose your split */}
+          <Header
+            index={"01"}
+            title={"Pick your poison"}
+            description={"Select the workout you wish to endure"}
+          />
+        </div>
+        <div className="grid grid-cols-1 sm:flex sm:justify-center sm:mx-auto gap-4">
+          {Object.keys(WORKOUTS).map((type, typeIndex) => {
+            return (
+              <ScrollIntoView
+                onClick={handleScrolls}
+                key={typeIndex}
+                href="#pickOne"
+              >
+                <button
+                  id="pickOne"
+                  onClick={() => {
+                    setMuscles([]);
+                    setPoison(type);
+                    toast.success("Great your poison has been selected!");
+                  }}
+                  className={
+                    "bg-slate-950 redshawo w-full border px-4 py-4 lg:w-60 sm:px-8 rounded-lg duration-200 hover:border-blue-400" +
+                    (type === poison ? " border-blue-600" : "border-blue-400 ")
+                  }
+                >
+                  <p className="capitalize">{type.replaceAll("_", " ")}</p>
+                </button>
+              </ScrollIntoView>
+            );
+          })}
+        </div>
+        {/* Second container / choose your measures */}
         <Header
-          index={"01"}
-          title={"Pick your poison"}
-          description={"Select the workout you wish to endure"}
+          index={"02"}
+          title={"Lock on targets"}
+          description={"Select the muscles judged for annihilation."}
         />
-      </div>
-      <div className="grid grid-cols-1 sm:flex sm:justify-center sm:mx-auto gap-4">
-        {Object.keys(WORKOUTS).map((type, typeIndex) => {
-          return (
-            <ScrollIntoView
-              onClick={handleScrolls}
-              key={typeIndex}
-              href="#pickOne"
-            >
+        <div className="bg-slate-950 w-80 sm:w-[28rem] mx-auto flex flex-col border border-solid border-blue-400 rounded-md">
+          <button
+            onClick={toggleModel}
+            className="relative flex items-center justify-center p-3"
+          >
+            <p className="capitalize">
+              {muscles.length == 0
+                ? "Select muscle groups"
+                : muscles.join(" 🦾 ")}
+            </p>
+            <i className="fa-solid fa-caret-down absolute right-3 top-1/2 -translate-y-1/2 "></i>
+          </button>
+          {showModal && (
+            <div className="flex flex-col px-3 pb-3">
+              {(poison === "individual"
+                ? WORKOUTS[poison]
+                : Object.keys(WORKOUTS[poison])
+              ).map((muscleGroup, muscleGroupIndex) => {
+                return (
+                  <button
+                    key={muscleGroupIndex}
+                    onClick={() => {
+                      updateMuscle(muscleGroup);
+                    }}
+                    className={`hover:text-blue-400 duration-200 ${
+                      muscles.includes(muscleGroup) ? "text-blue-400" : ""
+                    }`}
+                  >
+                    <p className="">{muscleGroup.replaceAll("_", "")}</p>
+                  </button>
+                );
+              })}
+            </div>
+          )}
+        </div>
+        {/* Third container / your exercises */}
+        <Header
+          index={"03"}
+          title={"Become Juggernaut"}
+          description={"Select your ultimate objective."}
+        />
+        <div className="grid grid-cols-1 sm:flex sm:justify-center sm:mx-auto gap-4">
+          {Object.keys(SCHEMES).map((scheme, schemeIndex) => {
+            return (
               <button
-                id="pickOne"
                 onClick={() => {
-                  setMuscles([]);
-                  setPoison(type);
+                  setGoals(scheme);
+                  toast.success("Great your scheme has been selected!");
                 }}
                 className={
-                  "bg-slate-950 redshawo w-full border px-4 py-4 lg:w-60 sm:px-8 rounded-lg duration-200 hover:border-blue-400" +
-                  (type === poison ? " border-blue-600" : "border-blue-400 ")
+                  "bg-slate-950 border px-4 py-4 sm:w-40 lg:w-60 rounded-lg duration-200 hover:border-blue-600" +
+                  (scheme === goals ? " border-blue-600" : "border-blue-400 ")
                 }
+                key={schemeIndex}
               >
-                <p className="capitalize">{type.replaceAll("_", " ")}</p>
+                <p className="capitalize">{scheme.replaceAll("_", " ")}</p>
               </button>
-            </ScrollIntoView>
-          );
-        })}
-      </div>
-      {/* Second container / choose your measures */}
-      <Header
-        index={"02"}
-        title={"Lock on targets"}
-        description={"Select the muscles judged for annihilation."}
-      />
-      <div className="bg-slate-950 w-80 sm:w-[28rem] mx-auto flex flex-col border border-solid border-blue-400 rounded-md">
-        <button
-          onClick={toggleModel}
-          className="relative flex items-center justify-center p-3"
-        >
-          <p className="capitalize">
-            {muscles.length == 0
-              ? "Select muscle groups"
-              : muscles.join(" 🦾 ")}
-          </p>
-          <i className="fa-solid fa-caret-down absolute right-3 top-1/2 -translate-y-1/2 "></i>
-        </button>
-        {showModal && (
-          <div className="flex flex-col px-3 pb-3">
-            {(poison === "individual"
-              ? WORKOUTS[poison]
-              : Object.keys(WORKOUTS[poison])
-            ).map((muscleGroup, muscleGroupIndex) => {
-              return (
-                <button
-                  key={muscleGroupIndex}
-                  onClick={() => {
-                    updateMuscle(muscleGroup);
-                  }}
-                  className={`hover:text-blue-400 duration-200 ${
-                    muscles.includes(muscleGroup) ? "text-blue-400" : ""
-                  }`}
-                >
-                  <p className="">{muscleGroup.replaceAll("_", "")}</p>
-                </button>
-              );
-            })}
-          </div>
-        )}
-      </div>
-      {/* Third container / your exercises */}
-      <Header
-        index={"03"}
-        title={"Become Juggernaut"}
-        description={"Select your ultimate objective."}
-      />
-      <div className="grid grid-cols-1 sm:flex sm:justify-center sm:mx-auto gap-4">
-        {Object.keys(SCHEMES).map((scheme, schemeIndex) => {
-          return (
-            <button
-              onClick={() => {
-                setGoals(scheme);
-              }}
-              className={
-                "bg-slate-950 border px-4 py-4 sm:w-40 lg:w-60 rounded-lg duration-200 hover:border-blue-600" +
-                (scheme === goals ? " border-blue-600" : "border-blue-400 ")
-              }
-              key={schemeIndex}
-            >
-              <p className="capitalize">{scheme.replaceAll("_", " ")}</p>
-            </button>
-          );
-        })}
-      </div>
-      <Button func={updateWorkout} text={"FORMULATE"} />
-    </SectionWrapper>
+            );
+          })}
+        </div>
+        <Button
+          func={updateWorkout}
+          text={"FORMULATE"}
+        />
+      </SectionWrapper>
     </section>
   );
 }

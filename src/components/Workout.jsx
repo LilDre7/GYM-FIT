@@ -3,6 +3,7 @@ import ExerciseCard from "./ExerciseCard";
 import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import Button from "./Button";
+import { toast, ToastContainer } from "react-toastify";
 
 Workout.propTypes = {
   workout: PropTypes.array.isRequired,
@@ -27,7 +28,7 @@ export default function Workout(props) {
     // Resetea la lista de ejercicios y oculta la lista
     setUpdatedWorkout([]);
     setShowWorkoutList(false); // Oculta la lista de ejercicios
-    setShowWorkoutList(true)
+    setShowWorkoutList(true);
   }
 
   // Función para alternar la visibilidad de la lista de ejercicios
@@ -53,6 +54,7 @@ export default function Workout(props) {
           header={"welcome to"}
           title={["The", "DANGER", "zone"]}
         >
+          <ToastContainer />
           {/* Mostrar la lista de ejercicios */}
           <div className="flex flex-col gap-4 mt-4">
             {updatedWorkout.map((exercise, i) => {
@@ -63,7 +65,13 @@ export default function Workout(props) {
           <div className="flex justify-center mt-4">
             <scrollIntoView onClick={handleScrolls} href="#newOneWorkout">
               {/* Botón para generar un nuevo entrenamiento */}
-              <Button func={restartWorkoutButton} text={"New Workout"} />
+              <Button
+                func={restartWorkoutButton}
+                text={"New Workout"}
+                onClick={() => {
+                  toast.success("New workout generated!");
+                }}
+              />
             </scrollIntoView>
           </div>
         </SectionWrapper>
